@@ -2,30 +2,44 @@
 @model MyApp.Namespace.RazorModel
 @{
     List<string> courses = new List<string>
-    {
-        "DT057G - Webbutveckling I",
-        "DT084G - Introduktion till programmering i JavaScript",
-        "DT200G - Grafisk teknik för webb",
-        "DT068G - Webbanvändbarhet",
-        "DT003G - Databaser",
-        "DT211G - Frontend-baserad webbutveckling",
-        "DT207G - Backend-baserad webbutveckling",
-        "DT208G - Programmering i TypeScript",
-        "IK060G - Projektledning",
-        "DT071G - Programmering i C#.NET",
-        "DT193G - Fullstack-utveckling med ramverk",
-        "DT209G - Webbutveckling för WordPress"
-    };
+{
+"DT057G - Webbutveckling I",
+"DT084G - Introduktion till programmering i JavaScript",
+"DT200G - Grafisk teknik för webb",
+"DT068G - Webbanvändbarhet",
+"DT003G - Databaser",
+"DT211G - Frontend-baserad webbutveckling",
+"DT207G - Backend-baserad webbutveckling",
+"DT208G - Programmering i TypeScript",
+"IK060G - Projektledning",
+"DT071G - Programmering i C#.NET",
+"DT193G - Fullstack-utveckling med ramverk",
+"DT209G - Webbutveckling för WordPress"
+};
 }
 <div>
-<h2>Razor</h2>
-<p><em>Information</em></p>
-<p><em>Datum/klockslag:</em> @DateTime.Now</p>
-<p><em>Kurser jag läst</em></p>
-<ul>
-    @foreach (var course in courses)
-    {
-        <li>@course</li>
-    }
-</ul>
+    <h2>Razor</h2>
+    <p><em>Information</em></p>
+    <p><em>Datum/klockslag:</em> @DateTime.Now</p>
+    <p>
+        @{
+            var today = DateTime.Now.DayOfWeek;
+        }
+
+        @if (today == DayOfWeek.Friday)
+        {
+        <p>Idag är det fredag!</p>
+        }
+        else
+        {
+        <p>Idag är det inte fredag!</p>
+        }
+    </p>
+    <p><em>Kurser jag läst</em></p>
+    <ul>
+        @foreach (var course in courses)
+        {
+            <li>@course</li>
+        }
+    </ul>
 </div>
