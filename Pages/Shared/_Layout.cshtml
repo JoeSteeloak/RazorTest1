@@ -13,15 +13,17 @@
 
 <body>
     <header>
-        <a asp-area="" asp-page="/Index"><img src="~/images/JS logo.png" alt="Logo" width="100" /></a>
+        <div>
+            <a asp-area="" asp-page="/Index"><img src="~/images/JS logo.png" alt="Logo" width="100" /></a>
+        </div>
         <div class="date">
             <p>Dagens Datum är: @DateTime.Now.ToString("yyyy-MM-dd")</p>
         </div>
     </header>
 
-    <div>
+    <div class="flex-container">
         <!-- Sidomeny -->
-        <div>
+        <div class="navbar" style="flex-grow: 1; align-self: center">
             <nav>
                 <ul>
                     <li>
@@ -38,12 +40,13 @@
         </div>
 
         <!-- Huvudinnehåll -->
-        <main role="main">
+        <main role="main" style="flex-grow: 8">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="footer text-muted border-top">
+    <footer>
+        <hr>
         <div>
             <p>av Jonas Ståleker <br> Kontakta mig via e-post: jost2306@student.miun.se</p>
         </div>
