@@ -34,7 +34,10 @@ body {
   margin-left: auto; /* Flyttar datumet till höger */
 }
 header {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid black;
+  background-color: #fad96c;
   padding: 1rem;
+}
+
+footer {
+  text-align: center;
 }
