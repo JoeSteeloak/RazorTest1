@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/RazorTest1.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body>
@@ -19,11 +20,12 @@
         <div class="date">
             <p>Dagens Datum är: @DateTime.Now.ToString("yyyy-MM-dd")</p>
         </div>
+        <i class="fa fa-bars fa-2x" onclick="toggleMenu()" id="hamburger"></i>
     </header>
 
-    <div class="flex-container">
+    <div class="flex-container" >
         <!-- Sidomeny -->
-        <div class="navbar" style="flex-grow: 1; align-self: center">
+        <div class="navbar" id="navMenu" style="flex-grow: 1; align-self: center">
             <nav>
                 <ul>
                     <li>
